@@ -14,23 +14,23 @@ import java.util.List;
 public class DeptConsumerController {
     @Autowired
     private RestTemplate restTemplate;  //提供便捷访问远程http服务的方法
-    private  static final String REST_URL_PREFIX="http://localhost:8001/";
+   // private  static final String REST_URL_PREFIX="http://localhost:8001";
+    private  static final String REST_URL_PREFIX="http://spring-cloud-privider-dept";
 
     @RequestMapping("/consumer/dept/add")
     public boolean addDept(Dept dept){
-        return restTemplate.postForObject(REST_URL_PREFIX+"dept/add",dept,Boolean.class);
+        return restTemplate.postForObject(REST_URL_PREFIX+"/dept/add",dept,Boolean.class);
     }
 
-    @RequestMapping("/consumer/dept/get/{id}")
+    @RequestMapping("/consumer/dept/get")
     public Dept get(@PathVariable("id") Long id ){
        return restTemplate.getForObject(REST_URL_PREFIX+
-               "dept/get"+id,Dept.class);
+               "/dept/get"+id,Dept.class);
     }
 
     @RequestMapping("/consumer/dept/list")
     public List<Dept> queryAll(){
-        return restTemplate.getForObject(REST_URL_PREFIX+"dept/list",List.class);
-
+        return restTemplate.getForObject(REST_URL_PREFIX+"/dept/list",List.class);
     }
 
 
