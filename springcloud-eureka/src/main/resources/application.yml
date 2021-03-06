@@ -12,4 +12,4 @@ eureka:
     server-url:             #EurekaClientConfigBean
       defaultZone：http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
 
-      #defaultZone:http://${eureka.instance.hostname}:${service.port}/eureka/
+      #defaultZone:http://${eureka.instance.hostname}:${com.yf.service.port}/eureka/

@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 
-<mapper namespace="com.yf.dao.DeptDao">
+<mapper namespace="com.yf.com.yf.dao.DeptDao">
     <insert id="addDept" parameterType="Dept">
         insert into dept(dname,db_source)
         values(#{dname},DATABASE());
