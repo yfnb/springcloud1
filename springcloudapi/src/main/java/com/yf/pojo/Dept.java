@@ -17,4 +17,8 @@ public class Dept  implements Serializable {
     public Dept(String dname) {
         this.dname = dname;
     }
+
+    public static void main(String[] args) {
+        Dept dept=new Dept();
+    }
 }
