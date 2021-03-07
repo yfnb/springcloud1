@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import java.util.List;
 
 @Component
-@FeignClient(value = "spring-cloud-privider-dept")
+@FeignClient(value = "spring-cloud-privider-dept",fallbackFactory = DeptClientServiceFallbackFactory.class)
 public interface DeptClientService {
 
     @GetMapping("/dept/add")
